@@ -11,24 +11,24 @@ const app = express()
 dotenv.config()
 
 //ket noi voi mongo atlas
-// const connect = async() => {
-//     try {
-//         mongoose.set('strictQuery', false);
-//         await mongoose.connect(process.env.MONGO);
-//         console.log("Connect to mongoDB.")
-//       } catch (error) {
-//         throw error;
-//     }
-// }
+const connect = async() => {
+    try {
+        mongoose.set('strictQuery', false);
+        await mongoose.connect(process.env.MONGO);
+        console.log("Connect to mongoDB.")
+      } catch (error) {
+        throw error;
+    }
+}
 
 //ket noi voi mongo localhost
-const url = "mongodb://localhost:27017/createCVwebsite"
-const connect = async() => {
-    mongoose.set('strictQuery', false);
-    mongoose.connect(url, {})
-    .then(result => console.log("Connect to mongoDB."))
-    .catch(err => console.log(err))
-}
+// const url = "mongodb://localhost:27017/createCVwebsite"
+// const connect = async() => {
+//     mongoose.set('strictQuery', false);
+//     mongoose.connect(url, {})
+//     .then(result => console.log("Connect to mongoDB."))
+//     .catch(err => console.log(err))
+// }
 
 
 
