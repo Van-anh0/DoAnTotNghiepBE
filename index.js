@@ -6,7 +6,7 @@ import usersRoute from "./routes/users.js"
 import cvsRoute from "./routes/CV.js"
 import cookieParser from "cookie-parser"
 import cors from "cors"
-
+///haha update nè
 const app = express()
 dotenv.config()
 
