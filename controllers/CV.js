@@ -29,6 +29,16 @@ export const deleteCV = async (req, res) => {
      }
 }
 
+export const deleteAllCVs = async (req, res) => {
+    try{
+        const deletedCVs = await CV.deleteMany({})
+        res.status(200).json(`Deleted ${deletedCVs.deletedCount} CVs.`)
+    }catch(err){
+        res.status(500).json({message: err.message});
+    }
+}
+
+
 export const getByIDCV = async (req, res) => {
     try{
         const cv = await CV.findById(req.params.id)
