@@ -1,5 +1,5 @@
 import express from "express"
-import { createCV, deleteCV, getAllCV, getByEmailCV, getByIDCV, updatedCV } from "../controllers/CV.js"
+import { createCV, deleteAllCVs, deleteCV, getAllCV, getByEmailCV, getByIDCV, updatedCV } from "../controllers/CV.js"
 
 const router = express.Router()
 
@@ -12,6 +12,9 @@ router.put("/:id", updatedCV)
 
 //DELETE
 router.delete("/:id", deleteCV)
+
+//DELETE ALL
+router.delete("/",deleteAllCVs)
 
 //GET
 router.get("/:id", getByIDCV)
