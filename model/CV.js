@@ -3,10 +3,15 @@ import mongoose from "mongoose";
 const cvSchema = new mongoose.Schema({
     //required: true : không được để trống (not null)
   fullName: { type: String, required: true },
+  gender:{type:String},
+  birthday:{type: String},
   email: { type: String, required: true, unique: true },
   phone: { type: String, required: true },
   address: { type: String },
+  
   // summary: { type: String },
+  applyFor: {type: String},
+  target: {type: String},
   education: {type: String},
   // [
   //   {
@@ -30,7 +35,8 @@ const cvSchema = new mongoose.Schema({
   skills: {type: String},
   // [{ type: String }],
   interests: { type: String },
-  references: {type: String},
+  language:{type: String},
+  // references: {type: String},
   // [
   //   {
   //     name: { type: String },
