@@ -1,31 +1,26 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const UserSchema = new mongoose.Schema(
+const CVFormSchema = new mongoose.Schema(
   {
-    username: {
+    imgCV: {
       type: String,
       required: true,
     },
 
-    email: {
+    formCV: {
       type: String,
       required: true,
       unique: true,
     },
 
-    password: {
+    typeCV: {
       type: String,
       required: true,
-    },
-
-    isAdmin: {
-      type: Boolean,
-      default: false,
     },
   },
 
   { timestamps: true }
 );
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model('CVForm', CVFormSchema);
