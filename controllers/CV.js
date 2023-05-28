@@ -1,13 +1,16 @@
 import CV from '../model/CV.js';
 
-// const saveImage = async (imageUrl) => {
-//   // const imageUrl = 'https://vcdn1-giaitri.vnecdn.net/2022/09/23/-2181-1663929656.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=apYgDs9tYQiwn7pcDOGbNg';
+export const uploadAvatarCV = async (req, res) => {
+  try {
+    const result = await cloudinary.uploader.upload(req.body.data, {
+      folder: 'cvUser' // Thay 'cvUser' bằng tên thư mục bạn muốn lưu trữ ảnh trong Cloudinary
+    });
 
-//   const response = await fetch(imageUrl);
-//   const imageBuffer = await response.buffer();
-//   return imageBuffer;
-// };
-
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
 
 export const createCV = async (req, res) => {
   const newCV = new CV(req.body);

@@ -8,6 +8,7 @@ import {
   getByIDCV,
   getCVsByAuthorMail,
   updatedCV,
+  uploadAvatarCV,
 } from '../controllers/CV.js';
 
 const router = express.Router();
@@ -16,6 +17,8 @@ const router = express.Router();
 router.post('/', createCV);
 //lọc tất cả cv theo authorMail được đưa dữ liệu vào body
 router.post('/filter/author-mail', getCVsByAuthorMail);
+
+router.post('/upload', uploadAvatarCV);
 
 //UPDATE
 router.put('/:id', updatedCV);
@@ -32,5 +35,6 @@ router.get('/get-one/:email', getByEmailCV);
 
 //GET ALL
 router.get('/', getAllCV);
+
 
 export default router;
