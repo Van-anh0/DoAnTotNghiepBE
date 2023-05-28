@@ -51,6 +51,8 @@ const cvSchema = new mongoose.Schema(
     statusCV: { type: String },
     authorMail: { type: String },
     type: { type: String },
+    formCV: { type: String },
+    colorCV: { type: String },
   },
   { timestamps: true }
 );

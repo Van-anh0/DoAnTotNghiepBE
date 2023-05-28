@@ -19,6 +19,19 @@ export const updatedUser = async (req, res) => {
   }
 };
 
+export const updatedUserByEmail = async (req, res) => {
+  try {
+    const updatedUser = await User.findOneAndUpdate(
+      { email: req.params.email }, // Tìm người dùng dựa trên email
+      { $set: req.body }, // Các trường cần cập nhật
+      { new: true }
+    );
+    res.status(200).json(updatedUser);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 export const deleteUser = async (req, res) => {
   try {
     await User.findByIdAndDelete(req.params.id);
